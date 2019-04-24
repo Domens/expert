@@ -9,7 +9,7 @@ public class Knot {
     private Column column;
     private HashMap<String, KnotDecision> knotDecision = new HashMap<>();
     private List<String> uniqParametres;
-    private List<Knot> nextKnot = new ArrayList<>();
+    private HashMap<String, Knot> nextKnot = new HashMap<>();
     private String name;
 
     public Knot(Database database) {
@@ -53,12 +53,12 @@ public class Knot {
         return column;
     }
 
-    public List<Knot> getNextKnot() {
+    public HashMap<String, Knot> getNextKnot() {
         return nextKnot;
     }
 
-    public void addKnot(Knot knot) {
-        nextKnot.add(knot);
+    public void addKnot(String str, Knot knot) {
+        nextKnot.put(str, knot);
     }
 
     public String getName() {

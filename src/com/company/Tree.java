@@ -11,7 +11,7 @@ public class Tree {
         Knot knot = new Knot(database);
         for (String str : knot.getUniqParametres()) {
             if (knot.getKnotDecision().get(str) == KnotDecision.NEXT) {
-                knot.addKnot(doTree(database.generateWith(knot.getName(), str)));
+                knot.addKnot(str, doTree(database.generateWith(knot.getName(), str)));
             }
         }
         return knot;
