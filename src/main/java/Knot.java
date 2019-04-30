@@ -1,8 +1,3 @@
-<<<<<<< HEAD:src/main/java/Knot.java
-=======
-package com.company;
-
->>>>>>> 13c100a407b7c2eb01a87f23dbcfe5610be687b0:src/com/company/Knot.java
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;

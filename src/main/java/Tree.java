@@ -18,4 +18,15 @@ public class Tree {
     public Knot getStartKnot() {
         return startKnot;
     }
+
+    public void printTree(Knot knot) {
+        System.out.println(knot.getName());
+        knot.getKnotDecision().forEach((key, value) -> {
+            System.out.println(key + " " + value.name());
+
+            if (value == KnotDecision.NEXT) {
+                printTree(knot.getNextKnot().get(key));
+            }
+        });
+    }
 }
