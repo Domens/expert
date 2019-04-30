@@ -19,13 +19,13 @@ public class Tree {
         return startKnot;
     }
 
-    public void printTree(Knot knot) {
-        System.out.println(knot.getName());
+    public void printTree(Knot knot, String tab) {
+        System.out.println(tab + knot.getName());
         knot.getKnotDecision().forEach((key, value) -> {
-            System.out.println(key + " " + value.name());
+            System.out.println(tab + key + " " + value.name());
 
             if (value == KnotDecision.NEXT) {
-                printTree(knot.getNextKnot().get(key));
+                printTree(knot.getNextKnot().get(key), tab + " -> ");
             }
         });
     }
